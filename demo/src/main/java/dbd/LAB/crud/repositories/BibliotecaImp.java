@@ -78,6 +78,7 @@ public class BibliotecaImp implements BibliotecaRepository {
             conn.createQuery(sql)
                     .addParameter("id_biblioteca", id_biblioteca)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -7,6 +7,10 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
 
 @Repository
 public class LibroImp implements LibroRepository {
@@ -90,8 +94,10 @@ public class LibroImp implements LibroRepository {
             conn.createQuery(sql)
                     .addParameter("id_libro", id_libro)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 }
+
