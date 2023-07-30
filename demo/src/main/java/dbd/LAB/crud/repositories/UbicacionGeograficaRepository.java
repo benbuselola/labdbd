@@ -6,5 +6,7 @@ import java.util.List;
 public interface UbicacionGeograficaRepository {
     public UbicacionGeografica crear(UbicacionGeografica ubicacionGeografica);
     public List<UbicacionGeografica> getAll();
-    public UbicacionGeografica getUbicacion(int id_ubicacion);
+    public UbicacionGeografica getUbicacionGeografica(int id_ubicacion);
+    public UbicacionGeografica actualizar(UbicacionGeografica ubicacionGeografica);
+    public void borrar(int id_ubicacion);
 }

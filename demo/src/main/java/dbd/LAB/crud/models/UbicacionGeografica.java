@@ -11,6 +11,8 @@ public class UbicacionGeografica {
         this.id_continente_u = id_continente_u;
     }
 
+    // Getters y setters (métodos de acceso)
+
     public int getId_ubicacion() {
         return id_ubicacion;
     }

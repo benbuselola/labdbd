@@ -9,6 +9,8 @@ public class Continente {
         this.continente = continente;
     }
 
+    // Getters y setters (métodos de acceso)
+
     public int getId_continente() {
         return id_continente;
     }

@@ -4,7 +4,9 @@ import dbd.LAB.crud.models.Continente;
 import java.util.List;
 
 public interface ContinenteRepository {
-    public Continente crear(Continente continente );
+    public Continente crear(Continente continente);
     public List<Continente> getAll();
     public Continente getContinente(int id_continente);
+    public Continente actualizar(Continente continente);
+    public void borrar(int id_continente);
 }

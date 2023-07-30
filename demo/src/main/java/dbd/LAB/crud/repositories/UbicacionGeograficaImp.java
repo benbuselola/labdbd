@@ -15,26 +15,25 @@ public class UbicacionGeograficaImp implements UbicacionGeograficaRepository {
     private Sql2o sql2o;
 
     @Override
-    public UbicacionGeografica crear(UbicacionGeografica ubicacion) {
+    public UbicacionGeografica crear(UbicacionGeografica ubicacionGeografica) {
         try (Connection conn = sql2o.open()){
-            String sql = "INSERT INTO ubicacion_geografica(id_ubicacion, pais, id_continente_u)" +
-                    "VALUES (:id_ubicacion, :pais, :id_continente_u)";
+            String sql = "INSERT INTO Ubicacion_Geografica(id_ubicacion, pais, id_continente_u) VALUES (:id_ubicacion, :pais, :id_continente_u)";
             conn.createQuery(sql, true)
-                    .addParameter("id_ubicacion", ubicacion.getId_ubicacion())
-                    .addParameter("pais", ubicacion.getPais())
-                    .addParameter("id_continente_u", ubicacion.getId_continente_u())
+                    .addParameter("id_ubicacion", ubicacionGeografica.getId_ubicacion())
+                    .addParameter("pais", ubicacionGeografica.getPais())
+                    .addParameter("id_continente_u", ubicacionGeografica.getId_continente_u())
                     .executeUpdate();
-            return ubicacion;
+            return ubicacionGeografica;
         }catch (Exception e){
             System.out.println(e.getMessage());
+            return null;
         }
-        return null;
     }
 
     @Override
     public List<UbicacionGeografica> getAll() {
         try(Connection conn = sql2o.open()){
-            return conn.createQuery("SELECT * from ubicacion_geografica order by id_ubicacion asc")
+            return conn.createQuery("SELECT * FROM Ubicacion_Geografica ORDER BY id_ubicacion ASC")
                     .executeAndFetch(UbicacionGeografica.class);
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -43,9 +42,9 @@ public class UbicacionGeograficaImp implements UbicacionGeograficaRepository {
     }
 
     @Override
-    public UbicacionGeografica getUbicacion(int id_ubicacion) {
+    public UbicacionGeografica getUbicacionGeografica(int id_ubicacion) {
         try(Connection conn = sql2o.open()){
-            return conn.createQuery("select * from ubicacion_geografica where id_ubicacion = :id_ubicacion")
+            return conn.createQuery("SELECT * FROM Ubicacion_Geografica WHERE id_ubicacion = :id_ubicacion")
                     .addParameter("id_ubicacion", id_ubicacion)
                     .executeAndFetchFirst(UbicacionGeografica.class);
         } catch (Exception e) {
@@ -53,5 +52,32 @@ public class UbicacionGeograficaImp implements UbicacionGeograficaRepository {
             return null;
         }
     }
-}
 
+    @Override
+    public UbicacionGeografica actualizar(UbicacionGeografica ubicacionGeografica) {
+        try (Connection conn = sql2o.open()) {
+            String sql = "UPDATE Ubicacion_Geografica SET pais = :pais, id_continente_u = :id_continente_u WHERE id_ubicacion = :id_ubicacion";
+            conn.createQuery(sql)
+                    .addParameter("pais", ubicacionGeografica.getPais())
+                    .addParameter("id_continente_u", ubicacionGeografica.getId_continente_u())
+                    .addParameter("id_ubicacion", ubicacionGeografica.getId_ubicacion())
+                    .executeUpdate();
+            return ubicacionGeografica;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public void borrar(int id_ubicacion) {
+        try (Connection conn = sql2o.open()) {
+            String sql = "DELETE FROM Ubicacion_Geografica WHERE id_ubicacion = :id_ubicacion";
+            conn.createQuery(sql)
+                    .addParameter("id_ubicacion", id_ubicacion)
+                    .executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}

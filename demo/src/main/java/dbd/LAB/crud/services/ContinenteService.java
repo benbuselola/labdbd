@@ -37,4 +37,18 @@ public class ContinenteService{
     public Continente getContinente(@PathVariable int id_continente){
         return continenteRepository.getContinente(id_continente);
     }
+
+    // Actualizar por ID
+    @PutMapping("/Continente/{id_continente}")
+    @ResponseBody
+    public Continente actualizar(@PathVariable int id_continente, @RequestBody Continente cont) {
+        cont.setId_continente(id_continente);
+        return continenteRepository.actualizar(cont);
+    }
+
+    // Borrar por ID
+    @DeleteMapping("/Continente/{id_continente}")
+    public void borrar(@PathVariable int id_continente) {
+        continenteRepository.borrar(id_continente);
+    }
 }
