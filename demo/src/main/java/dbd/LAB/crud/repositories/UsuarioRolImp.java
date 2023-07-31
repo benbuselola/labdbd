@@ -78,6 +78,7 @@ public class UsuarioRolImp implements UsuarioRolRepository {
             conn.createQuery(sql)
                     .addParameter("id_usuario_rol", id_usuario_rol)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

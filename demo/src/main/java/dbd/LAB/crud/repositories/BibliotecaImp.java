@@ -25,6 +25,7 @@ public class BibliotecaImp implements BibliotecaRepository {
                     .addParameter("visualizacion", biblioteca.isVisualizacion())
                     .executeUpdate();
             return biblioteca;
+
         }catch (Exception e){
             System.out.println(e.getMessage());
             return null;

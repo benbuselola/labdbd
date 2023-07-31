@@ -74,6 +74,7 @@ public class RestriccionImp implements RestriccionRepository {
             conn.createQuery(sql)
                     .addParameter("id_restriccion", id_restriccion)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

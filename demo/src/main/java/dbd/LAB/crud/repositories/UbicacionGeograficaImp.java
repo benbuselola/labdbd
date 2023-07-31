@@ -76,6 +76,7 @@ public class UbicacionGeograficaImp implements UbicacionGeograficaRepository {
             conn.createQuery(sql)
                     .addParameter("id_ubicacion", id_ubicacion)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

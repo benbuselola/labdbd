@@ -78,6 +78,7 @@ public class LibroCarritoImp implements LibroCarritoRepository {
             conn.createQuery(sql)
                     .addParameter("id_libro_carrito", id_libro_carrito)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

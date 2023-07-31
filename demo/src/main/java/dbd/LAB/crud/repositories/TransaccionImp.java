@@ -80,6 +80,7 @@ public class TransaccionImp implements TransaccionRepository {
             conn.createQuery(sql)
                     .addParameter("id_transaccion", id_transaccion)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

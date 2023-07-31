@@ -74,6 +74,7 @@ public class RolImp implements RolRepository {
             conn.createQuery(sql)
                     .addParameter("id_rol", id_rol)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

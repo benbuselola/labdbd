@@ -82,6 +82,7 @@ public class UsuarioImp implements UsuarioRepository {
             conn.createQuery(sql)
                     .addParameter("id_usuario", id_usuario)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

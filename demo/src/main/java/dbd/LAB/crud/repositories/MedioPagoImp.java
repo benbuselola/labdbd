@@ -74,6 +74,7 @@ public class MedioPagoImp implements MedioPagoRepository {
             conn.createQuery(sql)
                     .addParameter("id_medio_pago", id_medio_pago)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

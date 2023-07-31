@@ -78,6 +78,7 @@ public class CategoriaLibroImp implements CategoriaLibroRepository {
             conn.createQuery(sql)
                     .addParameter("id_categoria_libro", id_categoria_libro)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

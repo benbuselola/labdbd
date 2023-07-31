@@ -76,6 +76,7 @@ public class LibroFavoritoImp implements LibroFavoritoRepository {
             conn.createQuery(sql)
                     .addParameter("id_libro_favorito", id_libro_favorito)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

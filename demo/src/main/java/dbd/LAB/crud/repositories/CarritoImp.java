@@ -78,6 +78,7 @@ public class CarritoImp implements CarritoRepository {
             conn.createQuery(sql)
                     .addParameter("id_carrito", id_carrito)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

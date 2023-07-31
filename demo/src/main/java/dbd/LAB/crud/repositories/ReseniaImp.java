@@ -82,6 +82,7 @@ public class ReseniaImp implements ReseniaRepository {
             conn.createQuery(sql)
                     .addParameter("id_reseña", id_reseña)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

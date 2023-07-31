@@ -75,6 +75,7 @@ public class CategoriaImp implements CategoriaRepository {
             conn.createQuery(sql)
                     .addParameter("id_categoria", id_categoria)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

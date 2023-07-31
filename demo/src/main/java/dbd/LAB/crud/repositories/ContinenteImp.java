@@ -74,6 +74,7 @@ public class ContinenteImp implements ContinenteRepository {
             conn.createQuery(sql)
                     .addParameter("id_continente", id_continente)
                     .executeUpdate();
+            System.out.println("Elemento eliminado correctamente");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
