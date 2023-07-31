@@ -25,6 +25,7 @@ public class TransaccionImp implements TransaccionRepository {
                     .addParameter("id_pago", transaccion.getId_pago())
                     .addParameter("id_carro", transaccion.getId_carro())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return transaccion;
         }catch (Exception e){
             System.out.println(e.getMessage());

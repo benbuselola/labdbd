@@ -23,6 +23,7 @@ public class CategoriaImp implements CategoriaRepository {
                     .addParameter("id_categoria", categoria.getId_categoria())
                     .addParameter("categoria", categoria.getCategoria())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return categoria;
         }catch (Exception e){
             System.out.println(e.getMessage());

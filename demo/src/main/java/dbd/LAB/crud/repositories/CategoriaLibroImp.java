@@ -24,6 +24,7 @@ public class CategoriaLibroImp implements CategoriaLibroRepository {
                     .addParameter("id_libro_cl", categoriaLibro.getId_libro_cl())
                     .addParameter("id_categoria_cl", categoriaLibro.getId_categoria_cl())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return categoriaLibro;
         }catch (Exception e){
             System.out.println(e.getMessage());

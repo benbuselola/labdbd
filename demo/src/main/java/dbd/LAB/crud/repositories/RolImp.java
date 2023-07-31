@@ -22,6 +22,7 @@ public class RolImp implements RolRepository {
                     .addParameter("id_rol", rol.getId_rol())
                     .addParameter("nombre_rol", rol.getNombre_rol())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return rol;
         }catch (Exception e){
             System.out.println(e.getMessage());

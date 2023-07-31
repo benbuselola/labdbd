@@ -22,6 +22,7 @@ public class MedioPagoImp implements MedioPagoRepository {
                     .addParameter("id_medio_pago", medioPago.getId_medio_pago())
                     .addParameter("medio_pago", medioPago.getMedio_pago())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return medioPago;
         }catch (Exception e){
             System.out.println(e.getMessage());

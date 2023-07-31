@@ -26,6 +26,7 @@ public class UsuarioImp implements UsuarioRepository {
                     .addParameter("mail", usuario.getMail())
                     .addParameter("id_ubicacion_usuario", usuario.getId_ubicacion_usuario())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return usuario;
         }catch (Exception e){
             System.out.println(e.getMessage());

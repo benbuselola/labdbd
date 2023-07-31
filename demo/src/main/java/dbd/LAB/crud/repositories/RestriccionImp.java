@@ -22,6 +22,7 @@ public class RestriccionImp implements RestriccionRepository {
                     .addParameter("id_restriccion", restriccion.getId_restriccion())
                     .addParameter("edad", restriccion.getEdad())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return restriccion;
         }catch (Exception e){
             System.out.println(e.getMessage());

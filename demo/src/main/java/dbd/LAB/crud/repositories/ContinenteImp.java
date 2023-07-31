@@ -22,6 +22,7 @@ public class ContinenteImp implements ContinenteRepository {
                     .addParameter("id_continente", continente.getId_continente())
                     .addParameter("continente", continente.getContinente())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return continente;
         }catch (Exception e){
             System.out.println(e.getMessage());

@@ -23,6 +23,7 @@ public class LibroFavoritoImp implements LibroFavoritoRepository {
                     .addParameter("id_usuario_f", libroFavorito.getId_usuario_f())
                     .addParameter("id_libro_f", libroFavorito.getId_libro_f())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return libroFavorito;
         }catch (Exception e){
             System.out.println(e.getMessage());

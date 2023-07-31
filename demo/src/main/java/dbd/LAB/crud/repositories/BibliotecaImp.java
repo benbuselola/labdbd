@@ -24,6 +24,7 @@ public class BibliotecaImp implements BibliotecaRepository {
                     .addParameter("id_libro_B", biblioteca.getId_libro_B())
                     .addParameter("visualizacion", biblioteca.isVisualizacion())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return biblioteca;
 
         }catch (Exception e){

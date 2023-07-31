@@ -24,6 +24,7 @@ public class LibroCarritoImp implements LibroCarritoRepository {
                     .addParameter("id_libro_lc", libroCarrito.getId_libro_lc())
                     .addParameter("id_carrito_lc", libroCarrito.getId_carrito_lc())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return libroCarrito;
         }catch (Exception e){
             System.out.println(e.getMessage());

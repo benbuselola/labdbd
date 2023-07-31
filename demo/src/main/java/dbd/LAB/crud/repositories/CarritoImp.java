@@ -24,6 +24,7 @@ public class CarritoImp implements CarritoRepository {
                     .addParameter("cantidad_producto", carrito.getCantidad_producto())
                     .addParameter("carrito_comprado", carrito.isCarrito_comprado())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return carrito;
         }catch (Exception e){
             System.out.println(e.getMessage());

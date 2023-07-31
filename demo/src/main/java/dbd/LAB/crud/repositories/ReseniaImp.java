@@ -26,6 +26,7 @@ public class ReseniaImp implements ReseniaRepository {
                     .addParameter("id_usuarioR", resenia.getId_usuarioR())
                     .addParameter("id_librore", resenia.getId_librore())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return resenia;
         }catch (Exception e){
             System.out.println(e.getMessage());

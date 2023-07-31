@@ -34,6 +34,7 @@ public class LibroImp implements LibroRepository {
                     .addParameter("id_ubicacion_libro", libro.getId_ubicacion_libro())
                     .addParameter("id_restriccion_libro", libro.getId_restriccion_libro())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return libro;
         }catch (Exception e){
             System.out.println(e.getMessage());

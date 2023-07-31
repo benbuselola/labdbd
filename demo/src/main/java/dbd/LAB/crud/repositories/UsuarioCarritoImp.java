@@ -24,6 +24,7 @@ public class UsuarioCarritoImp implements UsuarioCarritoRepository {
                     .addParameter("id_usuario_uc", usuarioCarrito.getId_usuario_uc())
                     .addParameter("id_carrito_uc", usuarioCarrito.getId_carrito_uc())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return usuarioCarrito;
         }catch (Exception e){
             System.out.println(e.getMessage());

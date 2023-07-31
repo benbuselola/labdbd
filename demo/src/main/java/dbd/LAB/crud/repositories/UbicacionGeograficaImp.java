@@ -23,6 +23,7 @@ public class UbicacionGeograficaImp implements UbicacionGeograficaRepository {
                     .addParameter("pais", ubicacionGeografica.getPais())
                     .addParameter("id_continente_u", ubicacionGeografica.getId_continente_u())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return ubicacionGeografica;
         }catch (Exception e){
             System.out.println(e.getMessage());

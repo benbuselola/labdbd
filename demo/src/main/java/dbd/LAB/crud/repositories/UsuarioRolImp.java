@@ -24,6 +24,7 @@ public class UsuarioRolImp implements UsuarioRolRepository {
                     .addParameter("id_usuario_ur", usuarioRol.getId_usuario_ur())
                     .addParameter("id_rol_ur", usuarioRol.getId_rol_ur())
                     .executeUpdate();
+            System.out.println("Elemento agregado correctamente");
             return usuarioRol;
         }catch (Exception e){
             System.out.println(e.getMessage());
